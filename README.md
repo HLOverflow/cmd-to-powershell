@@ -27,7 +27,7 @@ Attempts to map various CMD enumerations to powershell version without creating 
 
 Prior to running your command, use `get-command` to verify whether the CommandType is `Application` and whether the Source is mapped to disk. 
 
-Windows will log Process Creation event id 4688 under "Microsoft-Windows-Security-Auditing" when powershell spawns the underlying executable. This would include any cmdline that you passed into the executable as arguments.
+When CommandType is `Application`, Powershell will spawn the underlying executable to get result. Windows will log this under Process Creation event id 4688 inside "Microsoft-Windows-Security-Auditing". This would include any cmdline that you passed into the executable as arguments.
 
 
 ![](./getcommand.png)
