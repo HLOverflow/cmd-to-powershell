@@ -25,3 +25,9 @@ Attempts to map various CMD enumerations to powershell version without creating 
 |              | [Environment]::GetEnvironmentVariables() |
 | Reg.exe query HKLM\SYSTEM\<remainingpath> | ls HKLM:\SYSTEM\<remainingpath> |
 
+Prior to running your command, use `get-command` to verify whether the CommandType is `Application` and whether the Source is mapped to disk. 
+
+Windows will log Process Creation event id 4688 under "Microsoft-Windows-Security-Auditing" when powershell spawns the underlying executable. This would include any cmdline that you passed into the executable as arguments.
+
+
+![](./getcommand.png)
